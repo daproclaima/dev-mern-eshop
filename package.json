@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "MERN e-shop project",
   "main": "mern-shop-apiendpoints/server.js",
+  "type": "module",
   "repository": "https://github.com/DaProclaima/mern-eshop",
   "author": "daproclaima <sn.itpro@gmail.com>",
   "license": "UNLICENSED",
