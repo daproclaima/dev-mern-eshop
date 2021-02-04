@@ -19,7 +19,9 @@
     "start": "node apiendpoints/server",
     "server": "nodemon apiendpoints/server",
     "client": "yarn --cwd frontend start",
-    "dev": "concurrently \"yarn server\" \"yarn client\""
+    "dev": "concurrently \"yarn server\" \"yarn client\"",
+    "data:import": "node ./apiendpoints/seeder",
+    "data:destroy": "node ./apiendpoints/seeder -d"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
