@@ -13,7 +13,7 @@ This SPA is part of a whole MERN stack project.
 The project source code is available at [https://github.com/DaProclaima/mern-eshop](https://github.com/DaProclaima/mern-eshop)
 #### Archived: 
 
-This frontend application source code is available at: This backend software source code repository is: [https://github.com/DaProclaima/mern-shop-frontend](https://github.com/DaProclaima/mern-shop-frontend)
+This frontend application source code is available at: [https://github.com/DaProclaima/mern-shop-frontend](https://github.com/DaProclaima/mern-shop-frontend)
 
 The backend software source code is available at : [https://github.com/DaProclaima/mern-shop-apiendpoints](https://github.com/DaProclaima/mern-shop-apiendpoints) 
 
