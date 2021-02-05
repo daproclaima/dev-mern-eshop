@@ -10,6 +10,7 @@ const Loader = () => (
       height: "100px",
       margin: "auto",
     }}
+    className={"main-loader"}
   >
     <span className={"sr-only"}>Loading...</span>
   </Spinner>
