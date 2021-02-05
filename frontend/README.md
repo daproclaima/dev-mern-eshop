@@ -66,5 +66,4 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Development history
 
 - 2 Feb 2021 11:58pm : initial commit
-- 4 Feb 2021 3:47pm : merge project into [https://github.com/DaProclaima/mern-eshop](https://github.com/DaProclaima/mern-eshop) with backend API
-
+- 4 Feb 2021 : merge project into [https://github.com/DaProclaima/mern-eshop](https://github.com/DaProclaima/mern-eshop) with backend API
