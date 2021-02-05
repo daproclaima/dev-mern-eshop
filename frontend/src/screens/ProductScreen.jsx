@@ -16,7 +16,7 @@ import Loader from "../components/Loader";
 import Message from "../components/Message";
 
 const ProductScreen = ({ history, match }) => {
-  const [qty, setQty] = useState(0);
+  const [qty, setQty] = useState(1);
 
   // dispatch the actions
   const dispatch = useDispatch();
@@ -88,7 +88,7 @@ const ProductScreen = ({ history, match }) => {
                   <ListGroup.Item>
                     <Row>
                       <Col>Qty:</Col>
-                      <Col>
+                      <Col className={"col-8"}>
                         <Form.Control
                           as={"select"}
                           value={qty}
