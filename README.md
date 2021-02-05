@@ -109,8 +109,10 @@ You will also see any lint errors in the console.
 
 ## Development history
 
-- 2 Feb 2021 11:58pm : initial commit
-- 4 Feb 2021:
+### - 2 Feb 2021 11:58pm : initial commit
+
+
+### - 4 Feb 2021:
   Merge backend and frontend projects in single code repo.
   Frontend dev: add pages for Product details and list of products with their components (rating) 
   and bit of styling through bootstrap and css, use of react hooks to manage state (useEffect, useState),
@@ -120,8 +122,14 @@ You will also see any lint errors in the console.
   Add color to logger. Connection to MongoDB server and storing credentials in untracked .env. 
   Set up of connection with MongoDB servers and API with mongoose. Definition of models for user, 
   product and order. ServerError and notFound errors handled with middlewares.
-- 5 Feb 2021:
+
+
+### - 5 Feb 2021:
   Frontend dev: add redux store, load products list, product details to HomeScreen through store and handle errors. 
   Add cart and its items, stores its data in localstorage and retrieves them to set them in store
   (Redux:Use actions to fetch data, data get filtered in reducers, redux store gets data from reducers, 
   store updates app state to give data to templates.)
+
+
+### - 6 Feb 2021: 
+Frontend dev: add remove item from cart feature. 
