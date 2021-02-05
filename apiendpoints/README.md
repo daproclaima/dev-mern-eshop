@@ -1,17 +1,17 @@
-# mern-shop-apiendpoints 
-A REST API endpoints for a MERN stack e-shop portfolio project 
+# mern-shop-apiendpoints
+
+A REST API endpoints for a MERN stack e-shop portfolio project
 
 ## Project description
+
 This section covers what can be done on this application, how to use it and what are its technologies.
 
 ### Tasks performed on this project
 
-
 ### Technical explanations
- 
+
 This API is part of a whole MERN stack project.
 The project source code is available at [https://github.com/DaProclaima/mern-eshop](https://github.com/DaProclaima/mern-eshop)
-
 
 #### Archives:
 
@@ -35,7 +35,6 @@ In the project directory, you can run:
 
 Runs the API in the development mode.\
 Open [http://localhost:5000](http://localhost:3000) to view it in the browser.
-
 
 ## Development history
 
