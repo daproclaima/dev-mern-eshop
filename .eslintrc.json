@@ -27,5 +27,6 @@
                 "argsIgnorePattern": "next"
             }
         ]
-    }
+    },
+    "ignorePatterns": ["node_modules/", "**/vendor/*.js", "./frontend/"]
 }
