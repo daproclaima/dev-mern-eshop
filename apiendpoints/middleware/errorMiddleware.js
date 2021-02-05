@@ -13,5 +13,6 @@ const errorHandler = (err, req, res, next) => {
     })
     next()
 }
+// TODO error about environment
 
 export { notFound, errorHandler }
