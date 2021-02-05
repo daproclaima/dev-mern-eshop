@@ -111,5 +111,5 @@ Merge backend and frontend projects in single code repo.
 Frontend dev: add pages for Product details and list of products with their components (rating) and bit of styling through bootstrap and css, use of react hooks to manage state (useEffect, useState), react components (Router, route, router of bootstrap... all that for not reloading whole page and just change dom child objects)
 Backend dev: create Express api endpoints for products and load their data from backend mock. Add color to logger. Connection to MongoDB server and storing credentials in untracked .env. Set up of connection with MongoDB servers and API with mongoose. Definition of models for user, product and order. ServerError and notFound errors handled with middlewares.
 - 5 Feb 2021:
- Frontend dev: add redux store
+ Frontend dev: add redux store, load productList to HomeScreen through store and handle errors
 
