@@ -1,22 +1,23 @@
 # mern-shop-frontend SPA
+
 An e-commerce React website available at:
 
 ## Project description
+
 This section covers what can be done on this application, how to use it and what are its technologies.
 
 ### Tasks performed on this application
 
-
 ### Technical explanations
- 
-This SPA is part of a whole MERN stack project. 
+
+This SPA is part of a whole MERN stack project.
 The project source code is available at [https://github.com/DaProclaima/mern-eshop](https://github.com/DaProclaima/mern-eshop)
-#### Archived: 
+
+#### Archived:
 
 This frontend application source code is available at: [https://github.com/DaProclaima/mern-shop-frontend](https://github.com/DaProclaima/mern-shop-frontend)
 
-The backend software source code is available at : [https://github.com/DaProclaima/mern-shop-apiendpoints](https://github.com/DaProclaima/mern-shop-apiendpoints) 
-
+The backend software source code is available at : [https://github.com/DaProclaima/mern-shop-apiendpoints](https://github.com/DaProclaima/mern-shop-apiendpoints)
 
 #### Initial Environment of this application
 
@@ -39,24 +40,26 @@ Open [http://localhost:5000](http://localhost:5000) to access it in the browser.
 
 #### `yarn server`
 
-Runs the Express backend API for development and restart at every change as it executes nodemon 
+Runs the Express backend API for development and restart at every change as it executes nodemon
 on apiendpoints/server.
 Open [http://localhost:5000](http://localhost:5000) to access it in the browser.
 
 #### `yarn client`
+
 Runs the React frontend SPA in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view the frontend app in the browser.
 
 #### `yarn dev`
-Executes yarn client and yarn server to get the backend and frontend processes running in dev environment. 
+
+Executes yarn client and yarn server to get the backend and frontend processes running in dev environment.
 Any change both in frontend and backend restart their respective processes.
 
 Open [http://localhost:5000](http://localhost:5000) to access the API it in the browser.
 
-Open [http://localhost:3000](http://localhost:3000) to view the frontend app  in the browser.
-
+Open [http://localhost:3000](http://localhost:3000) to view the frontend app in the browser.
 
 ### Frontend app
+
 In the project directory, you can run:
 
 #### `yarn start`
@@ -93,6 +96,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ### Backend API Endpoints
+
 In the project directory, you can run:
 
 ### `yarn start`
@@ -106,10 +110,9 @@ You will also see any lint errors in the console.
 ## Development history
 
 - 2 Feb 2021 11:58pm : initial commit
-- 4 Feb 2021: 
-Merge backend and frontend projects in single code repo.
-Frontend dev: add pages for Product details and list of products with their components (rating) and bit of styling through bootstrap and css, use of react hooks to manage state (useEffect, useState), react components (Router, route, router of bootstrap... all that for not reloading whole page and just change dom child objects)
-Backend dev: create Express api endpoints for products and load their data from backend mock. Add color to logger. Connection to MongoDB server and storing credentials in untracked .env. Set up of connection with MongoDB servers and API with mongoose. Definition of models for user, product and order. ServerError and notFound errors handled with middlewares.
+- 4 Feb 2021:
+  Merge backend and frontend projects in single code repo.
+  Frontend dev: add pages for Product details and list of products with their components (rating) and bit of styling through bootstrap and css, use of react hooks to manage state (useEffect, useState), react components (Router, route, router of bootstrap... all that for not reloading whole page and just change dom child objects)
+  Backend dev: create Express api endpoints for products and load their data from backend mock. Add color to logger. Connection to MongoDB server and storing credentials in untracked .env. Set up of connection with MongoDB servers and API with mongoose. Definition of models for user, product and order. ServerError and notFound errors handled with middlewares.
 - 5 Feb 2021:
- Frontend dev: add redux store, load productList to HomeScreen through store and handle errors
-
+  Frontend dev: add redux store, load productList to HomeScreen through store and handle errors
