@@ -29,6 +29,10 @@ React version is 17.0.1
 
 Express.js version is 4.17.1
 
+## Installation
+TODO
+node, yarn, backend yarn install, frontend cd ./frontend/ yarn install
+
 ## Available Scripts
 
 ### Global project
@@ -60,7 +64,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the frontend app in 
 
 ### Frontend app
 
-In the project directory, you can run:
+In the frontend project directory, you can run:
 
 #### `yarn start`
 
@@ -97,7 +101,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ### Backend API Endpoints
 
-In the project directory, you can run:
+In the backend project at root project directory, you can run:
 
 ### `yarn start`
 
@@ -106,6 +110,16 @@ Open [http://localhost:5000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
+
+### API Routes
+TODO
+
+Products:
+
+- GET api/products
+- GET
+- POST
+
 
 ## Development history
 
