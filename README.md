@@ -137,4 +137,5 @@ You will also see any lint errors in the console.
 Frontend dev: add remove item from cart feature. 
 
 Backend dev: set up controllers and cleans up routes for product. Add user controller and routes.
-Add passwordMatch method to userModel and create user login route and controller 
+Add passwordMatch method to userModel and create user login route and controller. Add JWT to user authenticated.
+Add user profile route and protect routes with JWT validation.
