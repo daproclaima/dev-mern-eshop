@@ -155,3 +155,7 @@ Add passwordMatch method to userModel and create user login route and controller
 Add user profile route and protect routes with JWT validation.
 Add user registration with post request. Use mongoose pre save hook to hash password 
 before saving if email and username are not modified. 
+
+
+Frontend: set user login. Stores user info in localstorage and store, add loginScreen and Form container component. 
+Handle redirect 
