@@ -162,3 +162,5 @@ Handle redirect. Show username in  header and add logout ( remove userInfo from 
 Add user register features and template.
 
 Backend: add user update feature to change password, name, email.
+
+Frontend: add user Profile page along with a reducer, actions for getting user profile in store and page.
