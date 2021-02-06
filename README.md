@@ -153,3 +153,5 @@ Frontend dev: add remove item from cart feature.
 Backend dev: set up controllers and cleans up routes for product. Add user controller and routes.
 Add passwordMatch method to userModel and create user login route and controller. Add JWT to user authenticated.
 Add user profile route and protect routes with JWT validation.
+Add user registration with post request. Use mongoose pre save hook to hash password 
+before saving if email and username are not modified. 
