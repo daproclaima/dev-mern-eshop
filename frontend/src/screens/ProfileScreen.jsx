@@ -3,9 +3,9 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { getUserDetails } from "../actions/userActions";
+import { getUserDetails, updateUserProfile } from "../actions/userActions";
 
-const ProfilerScreen = ({ location, history }) => {
+const ProfileScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +17,7 @@ const ProfilerScreen = ({ location, history }) => {
   const { loading, error, user } = useSelector((state) => state.userDetails);
 
   const { userInfo } = useSelector((state) => state.userLogin);
+  const { success } = useSelector((state) => state.userUpdateProfile);
 
   useEffect(() => {
     if (!userInfo) {
@@ -37,7 +38,7 @@ const ProfilerScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage("Passwords don't match");
     } else {
-      // dispatch(register(name, email, password));
+      dispatch(updateUserProfile({ id: user._id, name, email, password }));
     }
   };
   return (
@@ -47,6 +48,7 @@ const ProfilerScreen = ({ location, history }) => {
         {loading && <Loader />}
         {message && <Message variant={"danger"}>{message}</Message>}
         {error && <Message variant={"danger"}>{error}</Message>}
+        {success && <Message variant={"success"}>Profile updated</Message>}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId={"name"}>
             <Form.Label>Name</Form.Label>
@@ -101,4 +103,4 @@ const ProfilerScreen = ({ location, history }) => {
 
 // check, login error when wrong email/password,
 // when login redirect, local storage and store have user info
-export default ProfilerScreen;
+export default ProfileScreen;
