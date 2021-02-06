@@ -158,4 +158,4 @@ before saving if email and username are not modified.
 
 
 Frontend: set user login. Stores user info in localstorage and store, add loginScreen and Form container component. 
-Handle redirect 
+Handle redirect. Show username in  header and add logout ( remove userInfo from store and localStorage).
