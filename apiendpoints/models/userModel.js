@@ -27,12 +27,13 @@ const userSchema = mongoose.Schema(
   }
 );
 
+// todo  add cart ?
+
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return bcrypt.compare(enteredPassword, this.password);
 };
 
 userSchema.pre("save", async function (next) {
-  console.log(this);
   if (!this.isModified("password")) {
     next();
   }
