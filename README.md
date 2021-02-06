@@ -118,6 +118,8 @@ You will also see any lint errors in the console.
   and bit of styling through bootstrap and css, use of react hooks to manage state (useEffect, useState),
   react components (Router, route, router of bootstrap... 
   all that for not reloading whole page and just change dom child objects)
+  
+  
   Backend dev: create Express api endpoints for products and load their data from backend mock. 
   Add color to logger. Connection to MongoDB server and storing credentials in untracked .env. 
   Set up of connection with MongoDB servers and API with mongoose. Definition of models for user, 
@@ -133,3 +135,6 @@ You will also see any lint errors in the console.
 
 ### - 6 Feb 2021: 
 Frontend dev: add remove item from cart feature. 
+
+Backend dev: set up controllers and cleans up routes for product. Add user controller and routes.
+Add passwordMatch method to userModel and create user login route and controller 
