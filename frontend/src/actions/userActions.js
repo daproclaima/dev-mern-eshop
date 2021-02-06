@@ -2,6 +2,7 @@ import {
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
+  USER_LOGOUT,
 } from "../constants/userConstants";
 import axios from "axios";
 import { PRODUCT_DETAILS_FAIL } from "../constants/productConstants";
@@ -40,4 +41,9 @@ export const login = (email, password) => async (dispatch) => {
           : e.message,
     });
   }
+};
+
+export const logout = () => (dispatch) => {
+  localStorage.removeItem("userInfoMERNESHOP");
+  dispatch({ type: USER_LOGOUT });
 };
