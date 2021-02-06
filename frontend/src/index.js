@@ -14,6 +14,7 @@ ReactDOM.render(
   </Provider>,
   document.getElementById("root")
 );
+// TODO security: protect form and url from js html injections, cors policies
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
