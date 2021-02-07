@@ -172,6 +172,7 @@ Add user profile edition.
 Frontend: Add shipping screen to save user contact details. Add checkout steps to shipping screen. 
 Add payment methods screen with reducer and actions, local storage and in store. Add Place Order screen. 
 
-Backend: add Order controller, model and routes
+Backend: add Order controller, model and routes for order creation and getting order by id.
 
-Frontend: add order reducer, actions and constants. Connect it backend to create order
+Frontend: add order reducer, actions and constants. Connect it to backend to create order and get order by id. 
+Add order screen.
