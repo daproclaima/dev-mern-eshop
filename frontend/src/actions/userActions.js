@@ -96,7 +96,6 @@ export const register = (name, email, password) => async (dispatch) => {
 };
 
 export const getUserDetails = (id) => async (dispatch, getState) => {
-  //todo security in url
   try {
     dispatch({
       type: USER_DETAILS_REQUEST,
@@ -131,7 +130,6 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
 };
 
 export const updateUserProfile = (user) => async (dispatch, getState) => {
-  //todo security in url
   try {
     dispatch({
       type: USER_UPDATE_PROFILE_REQUEST,
