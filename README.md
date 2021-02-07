@@ -169,4 +169,5 @@ Add user profile edition.
 
 ### - 7 Feb 2021: 
 
-Frontend: Add shipping screen to save user contact details. Add checkout steps to shipping screen.
+Frontend: Add shipping screen to save user contact details. Add checkout steps to shipping screen. 
+Add payment methods screen with reducer and actions, local storage and in store. 
