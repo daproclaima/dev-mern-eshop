@@ -165,3 +165,8 @@ Backend: add user update feature to change password, name, email.
 
 Frontend: add user Profile page along with a reducer, actions for getting user profile in store and page. 
 Add user profile edition.
+
+
+### - 7 Feb 2021: 
+
+Frontend: Add shipping screen to save user contact details.
