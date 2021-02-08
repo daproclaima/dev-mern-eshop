@@ -172,7 +172,7 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   }
 };
 
-export const getUsers = () => async (dispatch, getState) => {
+export const listUsers = () => async (dispatch, getState) => {
   try {
     dispatch({
       type: USER_LIST_REQUEST,
