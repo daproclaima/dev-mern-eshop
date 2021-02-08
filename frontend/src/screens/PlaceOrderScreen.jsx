@@ -5,10 +5,19 @@ import CheckoutSteps from "../components/CheckoutSteps";
 import Message from "../components/Message";
 import { Link } from "react-router-dom";
 import { createOrder } from "../actions/orderActions";
+import { USER_DETAILS_RESET } from "../constants/userConstants";
+import { ORDER_CREATE_RESET } from "../constants/orderConstants";
 
 const PlaceOrderScreen = ({ history }) => {
   const dispatch = useDispatch();
+
   const cart = useSelector((state) => state.cart);
+
+  if (!cart.shippingAddress.address) {
+    history.push("/shipping");
+  } else if (!cart.paymentMethod) {
+    history.push("/payment");
+  }
 
   // calculate prices
   const addDecimals = (num) => {
@@ -19,7 +28,7 @@ const PlaceOrderScreen = ({ history }) => {
     cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
   );
 
-  // TODO connect to API of delivering companies (UPS, Amazon FBA, Fedex) according to delivery location
+  // TODO connect to API of delivering companies (UPS, Amazon FBA, Fedex) according to delivery location and add price
   cart.shippingPrice = cart.itemsPrice > 100 ? 0 : 10;
 
   cart.taxPrice = addDecimals(Number((0.2 * cart.itemsPrice).toFixed(2)));
@@ -30,14 +39,15 @@ const PlaceOrderScreen = ({ history }) => {
     Number(cart.taxPrice)
   ).toFixed(2);
 
-  const orderCreate = useSelector((state) => state.orderCreate);
-  const { order, success, error } = orderCreate;
+  const { order, success, error } = useSelector((state) => state.orderCreate);
 
   useEffect(() => {
     if (success) {
-      history.push(`order/${order._id}`);
+      history.push(`/order/${order._id}`);
+      dispatch({ type: USER_DETAILS_RESET });
+      dispatch({ type: ORDER_CREATE_RESET });
     }
-  }, [history, success]);
+  }, [dispatch, order, history, success]);
 
   const placeOrderHandler = () => {
     dispatch(
@@ -99,7 +109,7 @@ const PlaceOrderScreen = ({ history }) => {
                         </Col>
                         <Col md={4}>
                           {item.qty} item(s) x ${item.price} = $
-                          {item.qty * item.price}
+                          {addDecimals(item.qty * item.price)}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -140,9 +150,11 @@ const PlaceOrderScreen = ({ history }) => {
                 </Row>
               </ListGroup.Item>
 
-              <ListGroup.Item>
-                {error && <Message variant={"danger"}>{error}</Message>}
-              </ListGroup.Item>
+              {error && (
+                <ListGroup.Item>
+                  <Message variant={"danger"}>{error}</Message>
+                </ListGroup.Item>
+              )}
               <ListGroup.Item>
                 <Button
                   type={"button"}
