@@ -38,7 +38,7 @@ const ProfileScreen = ({ location, history }) => {
         setEmail(user.email);
       }
     }
-  }, [dispatch, userInfo, history, user]);
+  }, [success, dispatch, userInfo, history, user]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -62,7 +62,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Label>Name</Form.Label>
             <Form.Control
               type={"name"}
-              placeHolder={"Enter name"}
+              placeholder={"Enter name"}
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
@@ -72,7 +72,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type={"email"}
-              placeHolder={"Enter email"}
+              placeholder={"Enter email"}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -82,7 +82,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type={"password"}
-              placeHolder={"Enter password"}
+              placeholder={"Enter password"}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -92,7 +92,7 @@ const ProfileScreen = ({ location, history }) => {
             <Form.Label>Confirm Password</Form.Label>
             <Form.Control
               type={"password"}
-              placeHolder={"Confirm password"}
+              placeholder={"Confirm password"}
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
@@ -150,7 +150,7 @@ const ProfileScreen = ({ location, history }) => {
                     )}
                   </td>
                   <td>
-                    <LinkContainer to={`/orders/${order._id}`}>
+                    <LinkContainer to={`/order/${order._id}`}>
                       <Button variant={"light"} className={"btn-sm"}>
                         Details
                       </Button>
