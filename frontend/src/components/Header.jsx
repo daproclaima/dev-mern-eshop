@@ -25,7 +25,7 @@ const Header = () => {
             <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
-                  <i className="fas fa-shopping-cart"></i> Cart
+                  <i className="fas fa-shopping-cart" /> Cart
                 </Nav.Link>
               </LinkContainer>
               {userInfo ? (
@@ -44,6 +44,19 @@ const Header = () => {
                     <i className="fas fa-user"></i>Sign in
                   </Nav.Link>
                 </LinkContainer>
+              )}
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title={"Administration"} id={"adminmenu"}>
+                  <LinkContainer to="/admin/userlist">
+                    <NavDropdown.Item>User List</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/admin/orderlist">
+                    <NavDropdown.Item>Order List</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/admin/productlist">
+                    <NavDropdown.Item>Product List</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
               )}
             </Nav>
             {/* <Form inline>
