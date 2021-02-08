@@ -180,6 +180,7 @@ Add order screen.
 ### - 8 Feb 2021: 
 
 Backend: add updateOrderToPaid function in controller and expose it to server through routes, add connection to 
-PayPal sandbox. Create route and controller to get connected user's orders
+PayPal sandbox. Create route and controller to get connected user's orders.
 Frontend: add reducer, constant and actions to consume updateOrderToPaid backend function. 
-Connect application to paypal and allow payment for order. 
+Connect application to paypal and allow payment for order. Add action and reducer to show connected user's orders 
+in his profile & orders page. Add Order details page.
