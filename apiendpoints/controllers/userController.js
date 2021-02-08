@@ -98,14 +98,20 @@ const getUsers = asyncHandler(async (req, res) => {
 // @access Private/Admin
 const deleteUser = asyncHandler(async (req, res) => {
   // TODO security check request content
-  const user = await User.findById(req.params.id);
-
-  if (user) {
-    user.remove();
-    res.json({ message: "user removed" });
+  console.log(typeof req.user._id.toString());
+  console.log(typeof req.params.id);
+  if (req.user._id !== req.params.id.toString()) {
+    res.status(403);
+    throw new Error("Connected user can not delete its own account");
   } else {
-    res.status(404);
-    throw new Error("user not found");
+    const user = await User.findById(req.params.id);
+    if (user) {
+      user.remove();
+      res.json({ message: "user removed" });
+    } else {
+      res.status(404);
+      throw new Error("user not found");
+    }
   }
 });
 
