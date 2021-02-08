@@ -91,7 +91,7 @@ const OrderScreen = ({ match }) => {
               </p>
               {order.isDelivered ? (
                 <Message variant={"success"}>
-                  Delivered on {order.deliveredAt}
+                  Delivered on {convertDate(order.deliveredAt)}
                 </Message>
               ) : (
                 <Message variant={"danger"}>Not delivered</Message>
