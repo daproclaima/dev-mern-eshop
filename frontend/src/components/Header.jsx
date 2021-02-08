@@ -17,13 +17,12 @@ const Header = () => {
     <header>
       <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
         <Container>
-          {/* todo BREADCRUMBS*/}
           <LinkContainer to="/">
             <Navbar.Brand>Mern E-shop</Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle aria-controls="header-navbar-nav" />
           <Navbar.Collapse id="header-navbar-nav">
-            <Nav className="mr-auto">
+            <Nav className="ml-auto">
               <LinkContainer to="/cart">
                 <Nav.Link>
                   <i className="fas fa-shopping-cart"></i> Cart
@@ -33,7 +32,7 @@ const Header = () => {
                 <NavDropdown title={userInfo.name} id={"username"}>
                   {/* TODO My purchases */}
                   <LinkContainer to="/profile">
-                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                    <NavDropdown.Item>Profile and Orders</NavDropdown.Item>
                   </LinkContainer>
                   <NavDropdown.Item onClick={logoutHandler}>
                     Logout
