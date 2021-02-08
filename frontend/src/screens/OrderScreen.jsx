@@ -8,6 +8,7 @@ import Loader from "../components/Loader";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
 import { ORDER_PAY_RESET } from "../constants/orderConstants";
+import { convertDate } from "../utils/dateConverter";
 
 const OrderScreen = ({ match }) => {
   // TODO edit an email with invoice view for admin and client
@@ -47,7 +48,6 @@ const OrderScreen = ({ match }) => {
   };
 
   const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
   };
 
@@ -105,7 +105,9 @@ const OrderScreen = ({ match }) => {
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant={"success"}>Paid on {order.paidAt}</Message>
+                <Message variant={"success"}>
+                  Paid on {convertDate(order.paidAt)}
+                </Message>
               ) : (
                 <Message variant={"danger"}>Not paid</Message>
               )}
