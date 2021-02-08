@@ -99,8 +99,9 @@ const getUsers = asyncHandler(async (req, res) => {
 const deleteUser = asyncHandler(async (req, res) => {
   // TODO security check request content
   console.log(typeof req.user._id.toString());
-  console.log(typeof req.params.id);
-  if (req.user._id !== req.params.id.toString()) {
+  console.log(typeof req.params.id.toString());
+  console.log(req.user._id.toString() === req.params.id.toString());
+  if (req.user._id.toString() === req.params.id.toString()) {
     res.status(403);
     throw new Error("Connected user can not delete its own account");
   } else {
