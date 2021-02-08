@@ -7,7 +7,7 @@ import { getOrderDetails } from "../actions/orderActions";
 import Loader from "../components/Loader";
 
 const OrderScreen = ({ match }) => {
-  // TOOD edit an email with invoice view for admin and client
+  // TODO edit an email with invoice view for admin and client
   const orderId = match.params.id;
 
   const dispatch = useDispatch();

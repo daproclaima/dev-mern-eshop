@@ -176,3 +176,8 @@ Backend: add Order controller, model and routes for order creation and getting o
 
 Frontend: add order reducer, actions and constants. Connect it to backend to create order and get order by id. 
 Add order screen.
+
+### - 8 Feb 2021: 
+
+Backend: add updateOrderToPaid function in controller and expose it to server through routes
+Frontend: add reducer, constant and actions to consume updateOrderToPaid backend function
