@@ -4,7 +4,7 @@ import { Table, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { listUsers } from "../actions/userActions";
+import { deleteUser, listUsers } from "../actions/userActions";
 
 const UserListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -13,16 +13,20 @@ const UserListScreen = ({ history }) => {
 
   const { userInfo } = useSelector((state) => state.userLogin);
 
+  const { success: successDelete, error: errorDelete } = useSelector(
+    (state) => state.userDelete
+  );
+
   useEffect(() => {
     if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers());
     } else {
       history.push("/login");
     }
-  }, [dispatch, history, userInfo]);
+  }, [dispatch, history, userInfo, successDelete]);
 
-  const deleteHandler = (userId) => {
-    console.log(userId + " deleted");
+  const deleteHandler = (id) => {
+    dispatch(deleteUser(id));
   };
 
   return (
@@ -32,6 +36,8 @@ const UserListScreen = ({ history }) => {
         <Loader />
       ) : error ? (
         <Message variant={"danger"}>{error}</Message>
+      ) : errorDelete ? (
+        <Message variant={"danger"}>User not deleted: {errorDelete}</Message>
       ) : (
         <Table striped bordered hover responsive className={"table-sm"}>
           <thead>

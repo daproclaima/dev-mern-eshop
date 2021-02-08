@@ -187,4 +187,4 @@ in his profile & orders page. Add Order details page.
 
 Backend: Admin part: add get users feature if admin. add user delete route and endpoint for admins.
 
-Frontend: Admin part: add users list page for admins 
+Frontend: Admin part: add users list page for admins. Add user deletion for admins.
