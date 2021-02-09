@@ -192,7 +192,7 @@ Frontend: Admin part: add users list page for admins. Add user deletion for admi
 actions and connect it with backend.
 
 ### - 8 Feb 2021: 
-Frontend: admin part: create product list screen.
+Frontend: admin part: create product list screen. Consumes product delete.
 
 Backend: admin part: create product delete endpoint.
 
