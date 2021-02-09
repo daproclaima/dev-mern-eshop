@@ -191,3 +191,6 @@ route and controller.
 Frontend: Admin part: add users list page for admins. Add user deletion for admins. Add user edition screen, reducer
 actions and connect it with backend.
 
+### - 8 Feb 2021: 
+Frontend: admin part: create product list screen.
+
