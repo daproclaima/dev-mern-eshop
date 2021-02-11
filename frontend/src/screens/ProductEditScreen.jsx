@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Form, Button } from "react-bootstrap";
+import { Form, Button, FormFile } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -78,6 +78,7 @@ const ProductEditScreen = ({ match, history }) => {
         ) : error ? (
           <Message variant={"danger"}>{error}</Message>
         ) : (
+          //  TODO: minimum 1 char, max 255
           <Form onSubmit={submitHandler}>
             <Form.Group controlId={"name"}>
               <Form.Label>Name</Form.Label>
@@ -89,6 +90,7 @@ const ProductEditScreen = ({ match, history }) => {
               />
             </Form.Group>
 
+            {/* TODO: only > 0*/}
             <Form.Group controlId={"price"}>
               <Form.Label>Price</Form.Label>
               <Form.Control
@@ -99,13 +101,28 @@ const ProductEditScreen = ({ match, history }) => {
               />
             </Form.Group>
 
+            {/*<Form.Group controlId={"image"}>*/}
+            {/*  <FormFile.Label>*/}
+            {/*    Image (png, jpg, webp format accepted; 6 different images max)*/}
+            {/*  </FormFile.Label>*/}
+            {/*  /!* TODO: Set up to 6 files *!/*/}
+            {/*  <FormFile.Input*/}
+            {/*    type={"file"}*/}
+            {/*    onChange={(e) => setImage(e.target.value)}*/}
+            {/*    encType={"multipart/form-data"}*/}
+            {/*    accept={".jpg, .jpeg, .png, webp"}*/}
+            {/*    multiple*/}
+            {/*    required*/}
+            {/*  />*/}
+            {/*</Form.Group>*/}
+
             <Form.Group controlId={"image"}>
-              <Form.Label>Image</Form.Label>
-              {/* TODO set a true image with formater */}
-              <Form.Control
-                type={"text"}
-                placeholder={"Enter product image url"}
-                value={image}
+              <Form.Label>
+                Image (png, jpg, webp format accepted; 6 different images max)
+              </Form.Label>
+              {/* TODO: Set up to 6 files */}
+              <Form.Input
+                type={"file"}
                 onChange={(e) => setImage(e.target.value)}
               />
             </Form.Group>
@@ -120,6 +137,7 @@ const ProductEditScreen = ({ match, history }) => {
               />
             </Form.Group>
 
+            {/* TODO: only > 0*/}
             <Form.Group controlId={"countInStock"}>
               <Form.Label>Count in stock</Form.Label>
               <Form.Control
@@ -140,10 +158,12 @@ const ProductEditScreen = ({ match, history }) => {
               />
             </Form.Group>
 
+            {/* TODO: max 2000 chars, escape and sanitize all inputs*/}
             <Form.Group controlId={"description"}>
               <Form.Label>Description</Form.Label>
               <Form.Control
                 type={"text"}
+                as={"textarea"}
                 placeholder={"Enter product description"}
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
