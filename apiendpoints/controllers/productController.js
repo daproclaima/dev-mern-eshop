@@ -66,7 +66,7 @@ const createProduct = asyncHandler(async (req, res) => {
 const updateProduct = asyncHandler(async (req, res) => {
   const { name, price, brand, category, description, image } = req.body;
   const product = await Product.findById(req.params.id);
-
+  // TODO: set a logger for errors
   if (product) {
     product.name = name || product.name;
     product.price = price || product.price;
