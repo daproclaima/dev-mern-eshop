@@ -197,5 +197,6 @@ Frontend: admin part: create product list screen. Consumes product delete.
 Backend: admin part: create product delete endpoint.
 
 ### - 11 Feb 2021: 
-Backend: admin part: create the createProduct and updateProduct endpoints and routes. 
+Backend: admin part: create the createProduct and updateProduct endpoints and routes.
+Frontend: admin part: create constants, actions, reducers for creating products. 
 
