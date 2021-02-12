@@ -29,6 +29,7 @@ const getProductById = asyncHandler(async (req, res) => {
 // @access PRIVATE/ADMIN
 const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
+  // TODO: delete image in storage
 
   if (product) {
     await product.remove();
@@ -47,7 +48,7 @@ const createProduct = asyncHandler(async (req, res) => {
     name: "Sample name",
     price: 0,
     user: req.user._id,
-    image: "/images/sample.webp",
+    image: "/uploads/sample.webp",
     brand: "Sample brand",
     category: "Sample category",
     countInStock: 0,
