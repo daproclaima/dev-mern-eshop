@@ -121,7 +121,7 @@ const ProductEditScreen = ({ match, history }) => {
                 Image (png, jpg, webp format accepted; 6 different images max)
               </Form.Label>
               {/* TODO: Set up to 6 files */}
-              <Form.Input
+              <Form.Control
                 type={"file"}
                 onChange={(e) => setImage(e.target.value)}
               />
