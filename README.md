@@ -198,5 +198,7 @@ Backend: admin part: create product delete endpoint.
 
 ### - 11 Feb 2021: 
 Backend: admin part: create the createProduct and updateProduct endpoints and routes. Add image upload feature
-Frontend: admin part: create constants, actions, reducers for creating and updating products. Add image upload feature
+Frontend: admin part: create constants, actions, reducers for creating and updating products.
 
+### - 12 Feb 2021: 
+Frontend: Admin: Add image upload feature at product edit.
