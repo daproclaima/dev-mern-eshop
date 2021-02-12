@@ -22,20 +22,20 @@ const storage = multer.diskStorage({
   filename(req, file, cb) {
     cb(
       null,
-      `${file.fieldname}-${Date.now()}${path.extname(file.origninalname)}`
+      `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`
     );
   },
 });
 
 function checkFileType(file, cb) {
-  const filetypes = /jpg|jpg|png|webp/;
+  const filetypes = /jpeg|jpg|png|webp/;
   const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
   const mimetype = filetypes.test(file.mimetype);
 
   if (extname && mimetype) {
     return cb(null, true);
   }
-  cb("Images only");
+  return cb("Images only");
 }
 
 const upload = multer({
@@ -44,8 +44,8 @@ const upload = multer({
   // fileSize: 500,
   // },
   storage,
-  fileFilter(req, files, cb) {
-    files.map((file) => checkFileType(file, cb));
+  fileFilter(req, file, cb) {
+    checkFileType(file, cb);
   },
 });
 
