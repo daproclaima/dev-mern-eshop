@@ -51,6 +51,7 @@ const upload = multer({
 
 // router.post("/", upload.array("image", 6), (req, res) => {
 //   res.send(`/${req.files.path}`);
+// TODO: compress image before persisting
 router.post("/", upload.single("image"), (req, res) => {
   res.send(`/${req.file.path}`);
 });
