@@ -40,3 +40,10 @@ h3 {
 .product-screen h2 {
   font-size: 1.1rem;
 }
+
+.form-group {
+  margin-top: 2rem;
+}
+
+/* TODO: set size to product images */
+
