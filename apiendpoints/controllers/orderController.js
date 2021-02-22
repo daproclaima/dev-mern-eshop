@@ -111,9 +111,14 @@ const updateOrderToDelivered = asyncHandler(async (req, res) => {
   const order = await Order.findById(req.params.id);
 
   if (order) {
-    order.isDelivered = true;
-    order.deliveredAt = Date.now();
-    res.json(await order.save());
+    if (order.isPaid) {
+      order.isDelivered = true;
+      order.deliveredAt = Date.now();
+      res.json(await order.save());
+    } else {
+      res.status(400);
+      throw new Error("The order is not paid");
+    }
   } else {
     res.status(404);
     throw new Error("Order not found");
