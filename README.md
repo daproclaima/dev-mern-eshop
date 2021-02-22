@@ -208,5 +208,5 @@ Frontend : admin: create OrderListScreen. add constants for list orders, reducer
 Backend: admin: create endpoint to get list of orders, updates order router.
 
 ### - 22 Feb 2021: 
-Frontend: admin: 
+Frontend: admin: create constants for Order
 Backend: admin: create endpoint to update order delivery status.

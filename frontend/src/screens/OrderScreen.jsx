@@ -1,28 +1,41 @@
 import React, { useEffect, useState } from "react";
-import { Col, ListGroup, Image, Card, Row } from "react-bootstrap";
+import { Button, Col, ListGroup, Image, Card, Row } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import { Link } from "react-router-dom";
-import { getOrderDetails, payOrder } from "../actions/orderActions";
+import {
+  deliverOrder,
+  getOrderDetails,
+  payOrder,
+} from "../actions/orderActions";
 import Loader from "../components/Loader";
 import axios from "axios";
 import { PayPalButton } from "react-paypal-button-v2";
-import { ORDER_PAY_RESET } from "../constants/orderConstants";
+import {
+  ORDER_PAY_RESET,
+  ORDER_DELIVER_RESET,
+} from "../constants/orderConstants";
 import { convertDate } from "../utils/dateConverter";
 
-const OrderScreen = ({ match }) => {
+const OrderScreen = ({ match, history }) => {
+  const dispatch = useDispatch();
+
   // TODO edit an email with invoice view for admin and client
   const orderId = match.params.id;
 
+  const { userInfo } = useSelector((state) => state.userLogin);
+
   const [sdkReady, setSdkReady] = useState(false);
 
-  const dispatch = useDispatch();
+  const { order, loading, error } = useSelector((state) => state.orderDetails);
 
-  const orderDetails = useSelector((state) => state.orderDetails);
-  const { order, loading, error } = orderDetails;
+  const { loading: loadingPay, success: successPay } = useSelector(
+    (state) => state.orderPay
+  );
 
-  const orderPay = useSelector((state) => state.orderPay);
-  const { loading: loadingPay, success: successPay } = orderPay;
+  const { loading: loadingDeliver, success: successDeliver } = useSelector(
+    (state) => state.orderDeliver
+  );
 
   if (!loading) {
     // calculate prices
@@ -51,9 +64,18 @@ const OrderScreen = ({ match }) => {
     dispatch(payOrder(orderId, paymentResult));
   };
 
+  const deliverHandler = (order) => {
+    dispatch(deliverOrder(order));
+  };
+
   useEffect(() => {
-    if (!order || successPay) {
+    if (!userInfo) {
+      history.push("/login");
+    }
+    if (!order || successPay || successDeliver) {
       dispatch({ type: ORDER_PAY_RESET });
+      dispatch({ type: ORDER_DELIVER_RESET });
+      // TODO: Infinite loop here ?
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
@@ -62,7 +84,7 @@ const OrderScreen = ({ match }) => {
         setSdkReady(true);
       }
     }
-  }, [dispatch, order, orderId, successPay]);
+  }, [dispatch, order, orderId, successPay, successDeliver, history, userInfo]);
 
   return loading ? (
     <Loader />
@@ -190,6 +212,21 @@ const OrderScreen = ({ match }) => {
                   )}
                 </ListGroup.Item>
               )}
+              {loadingDeliver && <Loader />}
+              {userInfo &&
+                userInfo.isAdmin &&
+                order.isPaid &&
+                !order.isDelivered && (
+                  <ListGroup.Item>
+                    <Button
+                      type="button"
+                      className="btn btn-block"
+                      onClick={deliverHandler(order)}
+                    >
+                      Mark as delivered
+                    </Button>
+                  </ListGroup.Item>
+                )}
             </ListGroup>
           </Card>
         </Col>
