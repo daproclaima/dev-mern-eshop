@@ -64,7 +64,7 @@ const OrderScreen = ({ match, history }) => {
     dispatch(payOrder(orderId, paymentResult));
   };
 
-  const deliverHandler = (order) => {
+  const deliverHandler = () => {
     dispatch(deliverOrder(order));
   };
 
@@ -72,10 +72,10 @@ const OrderScreen = ({ match, history }) => {
     if (!userInfo) {
       history.push("/login");
     }
-    if (!order || successPay || successDeliver) {
+
+    if (!order || successPay || successDeliver || order._id !== orderId) {
       dispatch({ type: ORDER_PAY_RESET });
       dispatch({ type: ORDER_DELIVER_RESET });
-      // TODO: Infinite loop here ?
       dispatch(getOrderDetails(orderId));
     } else if (!order.isPaid) {
       if (!window.paypal) {
@@ -221,7 +221,7 @@ const OrderScreen = ({ match, history }) => {
                     <Button
                       type="button"
                       className="btn btn-block"
-                      onClick={deliverHandler(order)}
+                      onClick={deliverHandler}
                     >
                       Mark as delivered
                     </Button>
