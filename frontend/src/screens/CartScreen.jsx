@@ -35,6 +35,8 @@ const CartScreen = ({ match, location, history }) => {
     history.push("/login?redirect=shipping");
   };
 
+  // TODO: cart still full once order is paid
+
   return (
     <Row>
       <Col md={8}>
