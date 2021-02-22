@@ -204,5 +204,5 @@ Frontend: admin part: create constants, actions, reducers for creating and updat
 Frontend: Admin: Add image upload feature at product edit.
 
 ### - 13 Feb 2021:
-Frontend : admin: create OrderListScreen. add constants for list orders, reducer, actions
+Frontend : admin: create OrderListScreen. add constants for list orders, reducer, actions.
 Backend: admin: create endpoint to get list of orders, updates order router.
