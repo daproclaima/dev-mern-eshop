@@ -56,7 +56,7 @@ const ProductScreen = ({ history, match }) => {
       dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
     }
     dispatch(listProductDetails(match.params.id));
-  }, [dispatch, match]);
+  }, [dispatch, match, successProductReviewCreate]);
 
   const addToCartHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
@@ -162,7 +162,10 @@ const ProductScreen = ({ history, match }) => {
                 {product.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
                     <strong>{review.name}</strong>
-                    <Rating value={review.rating} />
+                    <Rating
+                      value={review.rating}
+                      reviews={product.numReviews}
+                    />
                     <p>{review.createdAt.substring(0, 10)}</p>
                     <p>{review.comment}</p>
                   </ListGroup.Item>

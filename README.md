@@ -213,4 +213,5 @@ Backend: admin: create endpoint to update order delivery status.
 Add create product review endpoint and use HTTP logger Morgan
 
 ### - 23 Feb 2021:
-Frontend: add create review buttons
+Frontend: add create review buttons. Add searchBox
+Backend: fix product review schema by adding createdAt field and set its date in productController
