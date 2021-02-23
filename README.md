@@ -211,3 +211,6 @@ Backend: admin: create endpoint to get list of orders, updates order router.
 Frontend: admin: create constants for Order
 Backend: admin: create endpoint to update order delivery status. 
 Add create product review endpoint and use HTTP logger Morgan
+
+### - 23 Feb 2021:
+Frontend: add create review buttons
