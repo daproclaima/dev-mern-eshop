@@ -1,6 +1,6 @@
-# mern-shop-frontend SPA
+# NOBOUR Mern e-shop
 
-An e-commerce React website available at:
+An e-commerce website written on MERN stack and available at: https://nobour-mern-eshop.herokuapp.com/
 
 ## Project description
 
@@ -220,4 +220,4 @@ Add product search by keyword and results pagination.
 ### - 24 Feb 2021: 
 Frontend: add product carousel on homepage to show top rated products. Add meta description with react-meta
 Backend: add top rated products endpoints.
-Deployment in production on 
+Deployment in production on https://nobour-mern-eshop.herokuapp.com/
