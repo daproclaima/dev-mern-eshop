@@ -216,3 +216,7 @@ Add create product review endpoint and use HTTP logger Morgan
 Frontend: add create review buttons. Add searchBox, product result pagination.
 Backend: fix product review schema by adding createdAt field and set its date in productController.
 Add product search by keyword and results pagination.
+
+### - 24 Feb 2021: 
+Frontend: add product carousel on homepage to show top rated products
+Backend: add top rated products endpoints
