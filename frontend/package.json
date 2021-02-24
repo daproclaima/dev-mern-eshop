@@ -3,7 +3,7 @@
   "proxy": "http://127.0.0.1:5000",
   "version": "0.1.0",
   "license": "UNLICENSED",
-  "homepage": "index.html",
+  "homepage": "/",
   "private": false,
   "bugs": {
     "email": "sn.itpro@gmail.com",
@@ -21,6 +21,7 @@
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
     "react-paypal-button-v2": "^2.6.2",
     "react-redux": "^7.2.2",
     "react-router": "^5.2.0",
