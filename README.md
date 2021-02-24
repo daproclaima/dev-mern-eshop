@@ -218,5 +218,6 @@ Backend: fix product review schema by adding createdAt field and set its date in
 Add product search by keyword and results pagination.
 
 ### - 24 Feb 2021: 
-Frontend: add product carousel on homepage to show top rated products
-Backend: add top rated products endpoints
+Frontend: add product carousel on homepage to show top rated products. Add meta description with react-meta
+Backend: add top rated products endpoints.
+Deployment in production on 
