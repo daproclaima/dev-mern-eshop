@@ -25,7 +25,8 @@
     "client": "yarn --cwd frontend start",
     "dev": "concurrently \"yarn server\" \"yarn client\"",
     "data:import": "node ./apiendpoints/seeder",
-    "data:destroy": "node ./apiendpoints/seeder -d"
+    "data:destroy": "node ./apiendpoints/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false yarn install --cwd frontend && yarn --cwd frontend build"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
