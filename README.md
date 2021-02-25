@@ -4,7 +4,8 @@ An e-commerce website written on MERN stack and available at: https://nobour-mer
 
 ## Project description
 
-This section covers what can be done on this application, how to use it and what are its technologies.
+This section covers what can be done on this application, how to use it and what are its technologies. This repository is archived since it is a demo website. 
+It is a 100 hours project and my hourly rate is 50 €. A production version with securities and optimization is stored on one of my private repositories. And I am ready to deploy it for 400 €. What you will see on https://nobour-mern-eshop.herokuapp.com/ is soon the production version.
 
 ### Tasks performed on this application
 
@@ -221,3 +222,6 @@ Add product search by keyword and results pagination.
 Frontend: add product carousel on homepage to show top rated products. Add meta description with react-meta
 Backend: add top rated products endpoints.
 Deployment in production on https://nobour-mern-eshop.herokuapp.com/
+
+### - 25 Feb 2021: 
+This project is archived in favor of a private version ready for production to sell.
